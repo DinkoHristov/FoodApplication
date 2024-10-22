@@ -1,0 +1,53 @@
+﻿@model RegisterViewModel;
+
+@{
+	ViewData["Title"] = "Register";
+}
+
+<div class="container">
+	<div class="row shadow rounded">
+		<div class="col-sm-6 col-md-6 col-lg-6 col-xl-6">
+			<img src="~/images/thali.jpg" class="w-100 h-100" alt="Thali" />
+		</div>
+		<div class="col-sm-6 col-md-6 col-lg-6 col-xl-6">
+			<form asp-controller="Account" asp-action="Register" autocomplete="off" method="post" class="m-3 p-3">
+				<div class="mb-3">
+					<h2 class="text-pink fst-italic">Register</h2>
+					<span class="fst-italic text-muted">Create your account</span>
+				</div>
+				<div class="form-floating mb-3">
+					@Html.ValidationSummary()
+				</div>
+
+				<div class="form-floating mb-3">
+					<input type="text" asp-for="Name" class="form-control" />
+					<label class="form-label" asp-for="Name">Name</label>
+					<span asp-validation-for="Name" class="text-danger"></span>
+				</div>
+				<div class="form-floating mb-3">
+					<input type="text" asp-for="Address" class="form-control" />
+					<label class="form-label" asp-for="Address">Address</label>
+					<span asp-validation-for="Address" class="text-danger"></span>
+				</div>
+				<div class="form-floating mb-3">
+					<input type="text" asp-for="Email" class="form-control" />
+					<label class="form-label" asp-for="Email">Email</label>
+					<span asp-validation-for="Email" class="text-danger"></span>
+				</div>
+				<div class="form-floating mb-3">
+					<input type="password" asp-for="Password" class="form-control" />
+					<label class="form-label" asp-for="Password">Password</label>
+					<span asp-validation-for="Password" class="text-danger"></span>
+				</div>
+				<div class="form-floating mb-3">
+					<input type="password" asp-for="ConfirmPassword" class="form-control" />
+					<label class="form-label" asp-for="ConfirmPassword">Confirm Password</label>
+					<span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+				</div>
+				<div class="mb-3">
+					<button type="submit" class="btn btn-sm btn-dark w-100 p-2 shadow rounded">Register</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>

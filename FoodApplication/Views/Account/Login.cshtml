@@ -1,0 +1,43 @@
+﻿@model LoginViewModel;
+
+@{
+	ViewData["Title"] = "Login";
+}
+
+<div class="container">
+	<div class="row shadow rounded">
+		<div class="col-sm-6 col-md-6 col-lg-6 col-xl-6">
+			<div>
+				<img src="~/images/french_friesh.jpg" class="w-100" alt="French_fries" />
+			</div>
+		</div>
+		<div class="col-sm-6 col-md-6 col-lg-6 col-xl-6">
+			<form autocomplete="off" method="post" class="m-3 p-3">
+				<div class="mb-3">
+					<h2 class="text-pink fst-italic">Log In</h2>
+					<span class="fst-italic text-muted">Login into your account</span>
+				</div>
+				<div class="form-floating mb-3">
+					@Html.ValidationSummary()
+				</div>
+
+				<div class="form-floating mb-3">
+					<input type="text" asp-for="Email" class="form-control" />
+					<label class="form-label" asp-for="Email">Email</label>
+					<span asp-validation-for="Email" class="text-danger"></span>
+				</div>
+				<div class="form-floating mb-3">
+					<input type="password" asp-for="Password" class="form-control" />
+					<label class="form-label" asp-for="Password">Password</label>
+					<span asp-validation-for="Password" class="text-danger"></span>
+				</div>
+				<div class="mb-3">
+					<button class="btn btn-sm btn-dark w-100 p-2 shadow rounded" type="submit">Log In</button>
+				</div>
+				<div class="mb-3">
+					<span>Don't have an account? <a asp-controller="Account" asp-action="Register" class="text-decoration-none text-dark">Register here</a></span>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
